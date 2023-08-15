@@ -1,0 +1,315 @@
+15/08/23 
+Linux
+ 
+1.	Create the library as shown in the image above.
+inga@inga-virtual-machine:~$ mkdir -p ZOO/{predatory/{table,leopard},Birds/{parrot,chair}}
+inga@inga-virtual-machine:~$ tree ZOO/
+ZOO/
+├── Birds
+│   ├── chair
+│   └── parrot
+└── predatory
+    ├── leopard
+    └── table
+2. Show the library as a tree.
+3. Go to “table” in the absolute path.
+inga@inga-virtual-machine:~$ cd ~/ZOO/predatory/table/
+4. From your working directory, Rename “table” to “lion”
+inga@inga-virtual-machine:~/ZOO/predatory/table$ mv ../table/ ../lion
+5. From your working directory,Write a fact about “parrots and lions” in a file “lion/facts.txt”
+inga@inga-virtual-machine:~/ZOO/predatory/table$ nano facts.txt
+inga@inga-virtual-machine:~/ZOO/predatory/table$ cat facts.txt
+parrots and lions
+6. Go to “parrot” in the relative path.
+inga@inga-virtual-machine:~/ZOO/predatory/table$ cd ../../Birds/parrot/
+7. From your working directory, Copy the file “facts” to “parrot” dir in the relative path.
+inga@inga-virtual-machine:~/ZOO/Birds/parrot$ cp ../../predatory/lion/facts.txt ../../Birds/parrot/
+8. Rename “chair” to “chicken”.
+inga@inga-virtual-machine:~/ZOO/Birds/parrot$ mv ../chair/ ../chicken
+9. Create files chicken.txt from 1-9 (ex; chicken1.txt. chicken2.txt..etc)
+inga@inga-virtual-machine:~/ZOO/Birds/chicken$ touch chicken{1-9}.txt
+10. Show (List) the files under “chicken” subdir in reverse , display and save the result in the
+“iChick” file.
+inga@inga-virtual-machine:~/ZOO/Birds/chicken$ ls -lr
+total 4
+-rw-rw-r-- 1 inga inga 108 Aug 15 21:18 iChick
+-rw-rw-r-- 1 inga inga   0 Aug 15 21:22 chicken9.txt
+-rw-rw-r-- 1 inga inga   0 Aug 15 21:22 chicken8.txt
+-rw-rw-r-- 1 inga inga   0 Aug 15 21:22 chicken7.txt
+-rw-rw-r-- 1 inga inga   0 Aug 15 21:22 chicken6.txt
+-rw-rw-r-- 1 inga inga   0 Aug 15 21:22 chicken5.txt
+-rw-rw-r-- 1 inga inga   0 Aug 15 21:22 chicken4.txt
+-rw-rw-r-- 1 inga inga   0 Aug 15 21:22 chicken3.txt
+-rw-rw-r-- 1 inga inga   0 Aug 15 21:22 chicken2.txt
+-rw-rw-r-- 1 inga inga   0 Aug 15 21:22 chicken1.txt
+11. List only the files in range 1-5 “chicken1.txt, “chicken2.txt…”
+inga@inga-virtual-machine:~/ZOO/Birds/chicken$ ls -l chicken{1..5}.txt
+-rw-rw-r-- 1 inga inga 0 Aug 15 21:22 chicken1.txt
+-rw-rw-r-- 1 inga inga 0 Aug 15 21:22 chicken2.txt
+-rw-rw-r-- 1 inga inga 0 Aug 15 21:22 chicken3.txt
+-rw-rw-r-- 1 inga inga 0 Aug 15 21:22 chicken4.txt
+-rw-rw-r-- 1 inga inga 0 Aug 15 21:22 chicken5.txt
+inga@inga-virtual-machine:~/ZOO/Birds/chicken$
+12. List only the files named chicken that have an even number.
+inga@inga-virtual-machine:~/ZOO/Birds/chicken$ ls -l ./chicken{2..9..2}.txt
+-rw-rw-r-- 1 inga inga 0 Aug 15 21:22 ./chicken2.txt
+-rw-rw-r-- 1 inga inga 0 Aug 15 21:22 ./chicken4.txt
+-rw-rw-r-- 1 inga inga 0 Aug 15 21:22 ./chicken6.txt
+-rw-rw-r-- 1 inga inga 0 Aug 15 21:22 ./chicken8.txt
+13. Add new file named “123” , “abc” , “s3”
+inga@inga-virtual-machine:~/ZOO/Birds/chicken$ mkdir ./{123,abc,s3}
+14. List the content of the file.
+inga@inga-virtual-machine:~/ZOO/Birds/chicken$ ls-l
+ls-l: command not found
+inga@inga-virtual-machine:~/ZOO/Birds/chicken$ ls -l
+total 16
+drwxrwxr-x 2 inga inga 4096 Aug 15 22:42 123
+drwxrwxr-x 2 inga inga 4096 Aug 15 22:42 abc
+-rw-rw-r-- 1 inga inga    0 Aug 15 21:22 chicken1.txt
+-rw-rw-r-- 1 inga inga    0 Aug 15 21:22 chicken2.txt
+-rw-rw-r-- 1 inga inga    0 Aug 15 21:22 chicken3.txt
+-rw-rw-r-- 1 inga inga    0 Aug 15 21:22 chicken4.txt
+-rw-rw-r-- 1 inga inga    0 Aug 15 21:22 chicken5.txt
+-rw-rw-r-- 1 inga inga    0 Aug 15 21:22 chicken6.txt
+-rw-rw-r-- 1 inga inga    0 Aug 15 21:22 chicken7.txt
+-rw-rw-r-- 1 inga inga    0 Aug 15 21:22 chicken8.txt
+-rw-rw-r-- 1 inga inga    0 Aug 15 21:22 chicken9.txt
+-rw-rw-r-- 1 inga inga  640 Aug 15 21:27 iChick
+drwxrwxr-x 2 inga inga 4096 Aug 15 22:42 s3
+inga@inga-virtual-machine:~/ZOO/Birds/chicken$
+15. List only the files that its name compose from 3 characters.
+inga@inga-virtual-machine:~/ZOO/Birds/chicken$ ls -d ???*
+123  chicken1.txt  chicken3.txt  chicken5.txt  chicken7.txt  chicken9.txt
+abc  chicken2.txt  chicken4.txt  chicken6.txt  chicken8.txt  iChick
+16. List only files that contain “1” in its names.
+inga@inga-virtual-machine:~/ZOO/Birds/chicken$ ls *1*
+chicken1.txt
+123:
+17. Delete “zoo”       rm –r ZOO/
+========================================================================
+Bash Scripting:
+1. Create a Bash script that prompts the user to enter an email address. If the entered
+email address contains the "@" symbol and ends with ".com", display "Valid email
+address". Otherwise, display "Invalid email address".
+
+read -p "Enter a user's email address : " email
+echo
+if [[ $email == *'@'* && $email == *'.com' ]]
+then
+        echo "Valid email address"
+else
+        echo "Invalid email address"
+fi
+2. Create a user named "testuser" and set the login shell to /bin/bash.
+As the "testuser," create a shell script named login_shell_demo.sh that demonstrates a
+login shell behavior. The script should:
+Display a welcome message with your username.
+Show the current date and time.
+List the contents of the user's home directory.
+inga@inga-virtual-machine:~$ sudo useradd -m -s /bin/bash testuser
+[sudo] password for inga:
+inga@inga-virtual-machine:~$ sudo passwd testuser
+Retype new password:
+passwd: password updated successfully
+inga@inga-virtual-machine:~$ su - testuser
+Password:
+testuser@inga-virtual-machine:~$ vi login_shell_demo.sh
+ #! /bin/bash
+echo "Welcome, $(whoami)!"
+echo "Current date and time: $(date)"
+echo "Contents of your home directory:"
+ls -la ~
+~
+testuser@inga-virtual-machine:~$ chmod +x login_shell_demo.sh
+testuser@inga-virtual-machine:~$ ./login_shell_demo.sh
+Welcome, testuser!
+Current date and time: Tue 15 Aug 2023 23:51:59 IDT
+Contents of your home directory:
+total 28
+drwxr-x--- 2 testuser testuser 4096 Aug 15 23:49 .
+drwxr-xr-x 5 root     root     4096 Aug 15 23:17 ..
+-rw-r--r-- 1 testuser testuser  220 Jan  6  2022 .bash_logout
+-rw-r--r-- 1 testuser testuser 3771 Jan  6  2022 .bashrc
+-rwxrwxr-x 1 testuser testuser  128 Aug 15 23:49 login_shell_demo.sh
+-rw-r--r-- 1 testuser testuser  807 Jan  6  2022 .profile
+-rw------- 1 testuser testuser  872 Aug 15 23:49 .viminfo
+
+3. Create a new file named input.txt and echo “hello world” then Write a while loop that
+reads lines from a file named input.txt and prints each line in uppercase.
+testuser@inga-virtual-machine:~$ echo "hello world" >> input.txt
+testuser@inga-virtual-machine:~$ ls
+input.txt  login_shell_demo.sh
+testuser@inga-virtual-machine:~$ vi uppercase_reader.sh
+#! /bin/bash
+while IFS= read -r line
+do
+    echo "$line" | tr '[:lower:]' '[:upper:]'
+done < input.txt
+testuser@inga-virtual-machine:~$ chmod +x uppercase_reader.sh
+testuser@inga-virtual-machine:~$ ./uppercase_reader.sh
+HELLO WORLD
+
+4. Write a while loop that reads lines from a file named names.txt and prints out only the
+names that begin with the letter "A".
+Names.txt
+Ahmad Assadi
+Shlomi Peretz
+Antonio Nassar
+Nadav Cohen
+123456789
+Shakira
+Enrique Iglesias
+Aviv Kaitz
+testuser@inga-virtual-machine:~$ nano names.txt
+testuser@inga-virtual-machine:~$ vi filter_names.sh
+#! /bin/bash
+while IFS= read -r line
+do
+    first_word=$(echo "$line" | awk '{print $1}')
+    if [[ "$first_word" == "A"* ]]
+    then
+        echo "$line"
+    fi
+done < names.txt
+testuser@inga-virtual-machine:~$ chmod +x filter_names.sh
+testuser@inga-virtual-machine:~$ ./filter_names.sh
+Ahmad Assadi
+Antonio Nassar
+Aviv Kaitz
+5. Write a while loop that prompts the user to enter a number between 1 and 10. The loop
+should continue until the user enters a valid number, and then print out the number of
+attempts it took the user to enter a valid number.
+
+6. Write a while loop that prompts the user to enter a sentence and prints out only the
+words that contain the letter "e".
+testuser@inga-virtual-machine:~$ vi long_line.sh
+testuser@inga-virtual-machine:~$ chmod +x long_line.sh
+#! /bin/bash
+read -p "Enter a sentence: " sentence
+IFS=' ' read -ra words <<< "$sentence"
+for word in "${words[@]}"
+do
+    if [[ "$word" == *'e'* || "$word" == *'E'* ]]
+    then
+        echo "$word"
+    fi
+done
+testuser@inga-virtual-machine:~$ ./long_line.sh
+hello world
+7. Write a while loop that reads lines from a file named input.txt and prints out only the lines
+that are longer than 10 characters.
+#! /bin/bash
+while IFS= read -r line
+do
+    if [ ${#line} -gt 10 ]
+    then
+        echo "$line"
+    fi
+done < input.txt
+8. Write a while loop that prompts the user to enter a name and prints out the name in
+uppercase, but only if the name is longer than 5 characters.
+testuser@inga-virtual-machine:~$ vi uppercase_name.sh
+testuser@inga-virtual-machine:~$ chmod +x uppercase_name.sh
+
+#! /bin/bash
+while true
+do
+    read -p "Enter a name: " name
+    if [ ${#name} -gt 5 ]
+    then
+        echo "Uppercase name: ${name^^}"
+        break
+    else
+        echo "Name should be longer than 5 characters."
+    fi
+done
+~
+testuser@inga-virtual-machine:~$ ./uppercase_name.sh
+Enter a name: inga
+Name should be longer than 5 characters.
+Enter a name: tamara
+Uppercase name: TAMARA
+
+9. Create a new dir named “dir”. Create new files named “file1.txt” to “file9.txt” in “dir”
+Rename the file to “document1” to “document9” using loops.
+#!/bin/bash
+# Create the directory
+mkdir dir
+# Create and rename files using a loop
+for i in {1..9}
+do
+    filename="dir/file$i.txt"
+    touch "$filename"
+    new_filename="dir/document$i"
+    mv "$filename" "$new_filename"
+    echo "Created and renamed $new_filename"
+done
+testuser@inga-virtual-machine:~$ vi create_and_rename.sh
+testuser@inga-virtual-machine:~$ chmod +x create_and_rename.sh
+testuser@inga-virtual-machine:~$ ./create_and_rename.sh
+Created and renamed dir/document1
+Created and renamed dir/document2
+Created and renamed dir/document3
+Created and renamed dir/document4
+Created and renamed dir/document5
+Created and renamed dir/document6
+Created and renamed dir/document7
+Created and renamed dir/document8
+Created and renamed dir/document9
+testuser@inga-virtual-machine:~$
+10. Write a script that uses an `until` loop to repeatedly prompt the user to guess a number
+between 1 and 100. Provide hints like "higher" or "lower" based on the user's guesses,
+until they guess the correct number. The correct number is 77
+
+11. Write a script that prompts the user to select a day of the week using the following
+options:
+1. Monday
+2. Tuesday
+3. Wednesday
+4. Thursday
+5. Friday
+6.. Saturday
+7. Sunday
+Based on the user's input, display a message indicating whether it's a weekday or a
+weekend day or invalid choice
+testuser@inga-virtual-machine:~$ vi weekday_or_weekend.sh
+#!/bin/bash
+echo "Select a day of the week:"
+echo "1. Monday"
+echo "2. Tuesday"
+echo "3. Wednesday"
+echo "4. Thursday"
+echo "5. Friday"
+echo "6. Saturday"
+echo "7. Sunday"
+read -p "Enter your choice (1-7): " choice
+case $choice in
+    1|2|3|4|5)  # Weekdays
+        echo "It's a weekday."
+        ;;
+    6|7)        # Weekends
+        echo "It's a weekend day."
+        ;;
+    *)
+        echo "Invalid choice."
+        ;;
+Esac
+testuser@inga-virtual-machine:~$ chmod +x weekday_or_weekend.sh
+testuser@inga-virtual-machine:~$ ./weekday_or_weekend.sh
+Select a day of the week:
+1. Monday
+2. Tuesday
+3. Wednesday
+4. Thursday
+5. Friday
+6. Saturday
+7. Sunday
+Enter your choice (1-7): 3
+It's a weekday.
+testuser@inga-virtual-machine:~$
+
+
+========================================================================
+Git:
+Push all your script to the repo of bash in your remote repo.
+========================================================================
