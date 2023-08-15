@@ -313,3 +313,4 @@ testuser@inga-virtual-machine:~$
 Git:
 Push all your script to the repo of bash in your remote repo.
 ========================================================================
+added saccessfully 
